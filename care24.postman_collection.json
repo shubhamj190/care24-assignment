@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "9129add9-de46-4ee7-b963-176335ba29be",
+		"name": "care24",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"uniqueemail5@gmail.om\",\r\n    \"password\":\"nokia300\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create category",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"category5\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/category/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"category",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"shubham@gmail.com\",\r\n    \"password\":\"nokia300\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add content",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 8fa41ca7ca6553bc6630ef12014c04fc4ac7b485",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "title2",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "this is a body2",
+							"type": "text"
+						},
+						{
+							"key": "summary",
+							"value": "this is a summary2",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/USER/Downloads/Python - Django Assignment.pdf"
+						},
+						{
+							"key": "categories",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "categories",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/content/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"content",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list content for loggedin user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 8fa41ca7ca6553bc6630ef12014c04fc4ac7b485",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/list-content",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"list-content"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin content list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token f63a192f0f1fbdab912369c3251e79e2752a9f0f",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/admin-list-content/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin-list-content",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin update view",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token f63a192f0f1fbdab912369c3251e79e2752a9f0f",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "title2updated",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "this is a body2title2updated",
+							"type": "text"
+						},
+						{
+							"key": "summary",
+							"value": "this is a summary2title2updated",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/USER/Desktop/Learnings/lcomernbootcamp/tshirts/nine.png"
+						},
+						{
+							"key": "categories",
+							"value": "3",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "18",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/admin-update-content/13/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin-update-content",
+						"13",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "author update content",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/jsona",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 8fa41ca7ca6553bc6630ef12014c04fc4ac7b485",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "title2updated",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "this is a body2title2updated23",
+							"type": "text"
+						},
+						{
+							"key": "summary",
+							"value": "this is a summary2title2updated23",
+							"type": "text"
+						},
+						{
+							"key": "document",
+							"type": "file",
+							"src": "/C:/Users/USER/Desktop/Learnings/lcomernbootcamp/tshirts/five.png"
+						},
+						{
+							"key": "categories",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/update-content/13/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"update-content",
+						"13",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin delete content",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token f63a192f0f1fbdab912369c3251e79e2752a9f0f",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/admin-delete-content/13/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin-delete-content",
+						"13",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "author delete content",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 057149ef210101d867d1b942b0b7838bb155cb99",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/delete-content/14/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"delete-content",
+						"14",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/question/?search=title1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"question",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "title1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
